@@ -11,7 +11,28 @@ public class Employee {
 
     private Integer dId;
 
-//    查询员工的同时,部门信息也查询
+    public Employee() {
+        super();
+    }
+
+    public Employee(Integer empId, String empName, String gender, String email, Integer dId) {
+        super();
+        this.empId = empId;
+        this.empName = empName;
+        this.gender = gender;
+        this.email = email;
+        this.dId = dId;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    //    查询员工的同时,部门信息也查询
     private  Department  department;
 
     public Integer getEmpId() {

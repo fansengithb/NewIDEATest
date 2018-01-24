@@ -5,6 +5,18 @@ public class Department {
 
     private String deptName;
 
+
+    public Department() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    public Department(Integer deptId, String deptName) {
+        super();
+        this.deptId = deptId;
+        this.deptName = deptName;
+    }
+
     public Integer getDeptId() {
         return deptId;
     }
