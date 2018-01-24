@@ -11,6 +11,9 @@ public class Employee {
 
     private Integer dId;
 
+//    查询员工的同时,部门信息也查询
+    private  Department  department;
+
     public Integer getEmpId() {
         return empId;
     }
