@@ -32,7 +32,6 @@ public class EmployeeController {
             @RequestParam(value = "pn", defaultValue = "1") Integer pn,
             Model model){
 //        引入pageHelper分页插件
-
         PageHelper.startPage(pn,10);
 //        startPage后面紧跟的就是分页查询
         List<Employee> emps = employeeService.getAll();

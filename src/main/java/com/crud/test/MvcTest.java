@@ -1,5 +1,6 @@
 package com.crud.test;
 
+import com.crud.bean.Employee;
 import com.github.pagehelper.PageInfo;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,15 +11,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.util.List;
-
-import com.crud.bean.Employee;
 
 
 /**
@@ -31,7 +29,10 @@ import com.crud.bean.Employee;
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(locations = { "classpath:applicationContext.xml",
-        "file:D:\\work_file\\IDEA_workspace_fan\\NewIDEATest\\src\\main\\webapp\\WEB-INF\\dispatcherServlet-servlet.xml" })
+        "file:src/main/webapp/WEB-INF/dispatcherServlet-servlet.xml" })
+
+//        "D:\\sun-javawork\\ssmFirst\\src\\main\\webapp\\WEB-INF\\dispatcherServlet-servlet.xml" })
+//        "file:D:\\work_file\\IDEA_workspace_fan\\NewIDEATest\\src\\main\\webapp\\WEB-INF\\dispatcherServlet-servlet.xml" })
 public class MvcTest {
     @Autowired
     WebApplicationContext context;
@@ -41,7 +42,6 @@ public class MvcTest {
     @Before
     public  void  initMokcMvc(){
         mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
-
     }
 
     @Test
@@ -51,6 +51,7 @@ public class MvcTest {
                 .andReturn();
 
         //请求成功以后，请求域中会有pageInfo；我们可以取出pageInfo进行验证
+
         MockHttpServletRequest request = result.getRequest();
         PageInfo pi = (PageInfo) request.getAttribute("pageInfo");
         System.out.println("当前页码："+pi.getPageNum());
