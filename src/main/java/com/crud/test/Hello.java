@@ -3,8 +3,7 @@ package com.crud.test;
 import org.apache.commons.lang3.time.DateFormatUtils;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.*;
 
 /**
  * Created by fansen on 2018/1/23.
@@ -16,7 +15,7 @@ public class Hello {
 //       test();
 //       test3();
 //        test4();
-        test2();
+        test6();
 
     }
 
@@ -57,6 +56,10 @@ public class Hello {
 
     }
 
+    /**
+     *  有 date 获取对应星期天数
+     * @throws Exception
+     */
     public static void test2()throws  Exception{
 //        获得具体星期天数
         SimpleDateFormat aim = new SimpleDateFormat("EEEE");
@@ -103,5 +106,27 @@ public class Hello {
              ) {
             System.out.println(temp);
         }
+    }
+    /**
+     *   list中通过迭代器移除元素
+     */
+    public  static  void  test6(){
+        List<String> list=new ArrayList<String>();
+        list.add("1");
+        list.add("1");
+        list.add("1");
+        list.add("11");
+        list.add("12");
+
+        System.out.println(list);
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()){
+            String  temp = iterator.next();
+            if (Integer.parseInt(temp)>10){
+                iterator.remove();
+            }
+        }
+        System.out.println(list);
+
     }
 }
