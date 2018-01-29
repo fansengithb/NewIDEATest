@@ -1,5 +1,7 @@
 package com.crud.test;
 
+import org.apache.commons.lang3.time.DateFormatUtils;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -11,7 +13,11 @@ public class Hello {
     public static void main(String[] args) throws Exception {
 
 //        System.out.println("hell git from IDEA!");
-       test();
+//       test();
+//       test3();
+//        test4();
+        test2();
+
     }
 
     /**
@@ -28,16 +34,17 @@ public class Hello {
 //        System.out.println(dateString);
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date a = sdf.parse("2018-01-26 12:10:12");
-        Date b = sdf.parse("2018-01-25 02:10:12");
+        Date a = sdf.parse("2018-01-29 12:10:12");
+        Date b = sdf.parse("2018-01-27 02:10:12");
 //        Date d = sdf.parse("2018-01-25 22:10:12");
 
 
 
         Calendar c = Calendar.getInstance();
-        c.set( Calendar.DATE, c.get( Calendar.DATE ) - 1 );
+        c.set( Calendar.DATE, c.get( Calendar.DATE ) - 0 );
         Date today = c.getTime();
         SimpleDateFormat format = new SimpleDateFormat( "yyyy-MM-dd" );
+
         System.out.println(today);
         System.out.println(a);
         System.out.println(b);
@@ -50,4 +57,51 @@ public class Hello {
 
     }
 
+    public static void test2()throws  Exception{
+//        获得具体星期天数
+        SimpleDateFormat aim = new SimpleDateFormat("EEEE");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        Date a = sdf.parse("2018-01-28 12:10:12");
+
+        String week = aim.format(a);
+        System.out.println(week);
+        System.out.println("--"+aim.format(new Date()));
+    }
+
+    public  static  void  test3() throws  Exception{
+        // 利用Apache lang包快速获取凌晨0点0分0秒，23点59分59秒字符串
+        System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd 00:00:00"));
+        System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd 23:59:59"));
+
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date a = sdf.parse(DateFormatUtils.format(new Date(), "yyyy-MM-dd 00:00:00"));
+        System.out.println(a);
+
+
+        Calendar c = Calendar.getInstance();
+        c.set( Calendar.DATE, c.get( Calendar.DATE ) - 1 );
+        Date day = c.getTime();
+        System.out.println("   ----- "+DateFormatUtils.format(day, "yyyy-MM-dd 00:00:00"));
+
+    }
+
+    public static void test4()throws  Exception {
+      String string[]={"","",""};
+        System.out.println(string);
+    }
+
+    /**
+     * 字符串  split()  测试
+     */
+    public static void  test5()throws  Exception{
+        String one = "sdf|dsfdf|www";
+        String two[]= one.split("\\|");
+//        System.out.println(two);
+        for (String temp: two
+             ) {
+            System.out.println(temp);
+        }
+    }
 }

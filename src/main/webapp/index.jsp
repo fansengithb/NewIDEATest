@@ -51,6 +51,7 @@
             <table class="table table-bordered" id="emps_table">
                 <thead>
                 <tr>
+                    <th></th>
                     <th>#</th>
                     <th>empName</th>
                     <th>gender</th>
@@ -81,8 +82,7 @@
             页,总  条记录</div>
         <%--分页条信息--%>
         <div class="col-md-6">
-
-
+            
 
         </div>
     </div>
