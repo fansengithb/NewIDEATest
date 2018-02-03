@@ -167,6 +167,9 @@
     var totalRecord;
     $(function(){
 //        去首页
+
+//        在页面输出1
+//        alert(1);
         to_page(1);
 
     });
