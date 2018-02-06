@@ -15,7 +15,7 @@ public class Hello {
 //       test();
 //       test3();
 //        test4();
-        test6();
+        test8();
 
     }
 
@@ -128,5 +128,40 @@ public class Hello {
         }
         System.out.println(list);
 
+    }
+
+    /**
+     *   定时器测试
+     */
+    public static void test7() {
+        System.out.println("现在时间：    "+new Date());
+        Timer timer = new Timer();
+        timer.schedule(
+                new TimerTask() {
+                    @Override
+                    public void run() {
+                        System.out.println("one:   --"+new Date());
+                    }
+                },10000
+        );
+
+    }
+
+    /**
+     *  定时测试
+     */
+    public  static  void  test8()throws  Exception {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        Date a = sdf.parse("2018-02-07 00:14:12");
+
+        System.out.println("现在时间：   "+new Date());
+        Timer timer1 =new Timer();
+        timer1.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println("two   :"+new Date());
+            }
+        }, a);
     }
 }
