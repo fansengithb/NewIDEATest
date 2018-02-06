@@ -82,11 +82,15 @@ public class Hello {
         Date a = sdf.parse(DateFormatUtils.format(new Date(), "yyyy-MM-dd 00:00:00"));
         System.out.println(a);
 
+        System.out.println(sdf.format(a));
+
 
         Calendar c = Calendar.getInstance();
         c.set( Calendar.DATE, c.get( Calendar.DATE ) - 1 );
         Date day = c.getTime();
         System.out.println("   ----- "+DateFormatUtils.format(day, "yyyy-MM-dd 00:00:00"));
+
+
 
     }
 
@@ -130,10 +134,20 @@ public class Hello {
 
     }
 
+    public  static  void  test7() {
+
+
+        Calendar calendar = Calendar.getInstance();
+
+        int day = calendar.get(Calendar.DAY_OF_WEEK)-1;
+        System.out.println(day);
+
+    }
+
     /**
      *   定时器测试
      */
-    public static void test7() {
+    public static void test8() {
         System.out.println("现在时间：    "+new Date());
         Timer timer = new Timer();
         timer.schedule(
@@ -150,7 +164,7 @@ public class Hello {
     /**
      *  定时测试
      */
-    public  static  void  test8()throws  Exception {
+    public  static  void  test9()throws  Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         Date a = sdf.parse("2018-02-07 00:14:12");
@@ -164,4 +178,5 @@ public class Hello {
             }
         }, a);
     }
+
 }
