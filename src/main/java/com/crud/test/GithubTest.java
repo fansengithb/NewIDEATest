@@ -13,7 +13,8 @@ public class GithubTest  {
     public static void main(String[] args) throws  Exception {
 //        System.out.println("---------wwwweee----------");
 
-        test();
+//        test();
+         test1();
     }
 
 
@@ -54,6 +55,13 @@ public class GithubTest  {
         System.out.println("last--day:"+sdf.parse(DateFormatUtils.format(day, "yyyy-MM-dd 00:00:00")));
 
 
+    }
+
+    /**
+     *    github更改用户名！
+     */
+    public static void  test1(){
+        System.out.println("make the change!");
     }
 }
 
