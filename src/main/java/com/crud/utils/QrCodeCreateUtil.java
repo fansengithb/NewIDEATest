@@ -117,7 +117,9 @@ public class QrCodeCreateUtil {
      * @throws WriterException 
      */
     public static void main(String[] args) throws IOException, WriterException {  
-        
+
+
+//        生成的二维码扫描后--- 得到的网址链接是  http://www.baidu.com/?phone=123456789777
     	createQrCodeNew(new FileOutputStream(new File("d:\\www\\1.jpg")), "http://www.baidu.com/?phone=123456789777", 900, "JPEG");
         System.out.println("创建二维码信息!");
 
