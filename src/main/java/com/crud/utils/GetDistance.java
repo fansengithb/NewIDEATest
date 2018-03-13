@@ -25,11 +25,15 @@ public class GetDistance {
         String startLonLat = getLonLat(start);
         String endLonLat = getLonLat(end);
 
+
+        String startlonlat = getLonLat(start);
+
         System.out.println("起始地："+start+",经纬度："+startLonLat);
         System.out.println("终点："+end+",经纬度："+endLonLat);
 
         Long dis = getDistance(startLonLat,endLonLat);
         System.out.println("两点间距离："+dis+"米");
+
     }
 
     public  void  test(){
