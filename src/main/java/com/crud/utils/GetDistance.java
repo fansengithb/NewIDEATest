@@ -26,18 +26,25 @@ public class GetDistance {
         String endLonLat = getLonLat(end);
 
 
-        String startlonlat = getLonLat(start);
-
         System.out.println("起始地："+start+",经纬度："+startLonLat);
         System.out.println("终点："+end+",经纬度："+endLonLat);
 
         Long dis = getDistance(startLonLat,endLonLat);
         System.out.println("两点间距离："+dis+"米");
 
+
+        String StartLonLat = getLonLat(start);
+        String EndLonLatb =  getLonLat(end);
+
+        System.out.println("发货地:"+start+" ,经纬度:"+StartLonLat);
+        System.out.println("收货地:"+end+" ,经纬度"+EndLonLatb);
+
+        String  aStartLonLat = getLonLat(start);
     }
 
     public  void  test(){
 
+        logger.info("");
         logger.info("");
 
     }
