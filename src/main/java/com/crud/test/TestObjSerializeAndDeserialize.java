@@ -13,7 +13,9 @@ public class TestObjSerializeAndDeserialize {
 
         SerializePerson();   //序列化Person对象
         Person p = DeserializePerson();
+        System.out.println("序列化成功:");
         System.out.println(MessageFormat.format("name = {0},age = {1},sex = {2}",p.getName(),p.getAge(),p.getSex()));
+
 
     }
 

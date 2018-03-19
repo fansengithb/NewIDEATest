@@ -5,13 +5,7 @@ package com.crud.entity;
  */
 import java.io.Serializable;
 
-/**
- * <p>ClassName: Person<p>
- * <p>Description:测试对象序列化和反序列化<p>
- * @author xudp
- * @version 1.0 V
- * @createTime 2014-6-9 下午02:33:25
- */
+
 public class Person implements Serializable {
 
     /**

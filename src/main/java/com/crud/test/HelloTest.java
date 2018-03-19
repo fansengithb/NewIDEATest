@@ -11,6 +11,7 @@ import java.util.Date;
  */
 public class HelloTest {
     public static void main(String[] args) throws  Exception{
+        System.out.println("test!");
         test1();
 //        System.out.println("  hello,git!");
     }
