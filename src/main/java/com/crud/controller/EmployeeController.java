@@ -7,11 +7,8 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import  com.crud.service.EmployeeService;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -24,6 +21,33 @@ public class EmployeeController {
 
     @Autowired
     EmployeeService employeeService;
+
+
+    /**
+     * 员工更新方法
+     * @param employee
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/emp/{id}",method = RequestMethod.PUT)
+    public Msg saveEmp(Employee employee){
+
+        employeeService.updateEmp(employee);
+        return  Msg.success();
+    }
+
+    /**
+     * 根据id 查询员工
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/emp/{id}",method = RequestMethod.GET)
+    @ResponseBody
+    public  Msg getEmp(@PathVariable("id") Integer id){
+        Employee employee = employeeService.getEmp(id);
+        return  Msg.success().add("emp",employee);
+    }
+
 
 
     /**
@@ -55,7 +79,7 @@ public class EmployeeController {
      */
     @RequestMapping(value = "/emp",method = RequestMethod.POST)
     @ResponseBody
-    public Msg saveEmp(Employee employee){
+    public Msg saveEmp1(Employee employee){
         employeeService.saveEmp(employee);
         return Msg.success();
     }
