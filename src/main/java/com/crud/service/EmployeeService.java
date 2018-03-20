@@ -21,6 +21,18 @@ public class EmployeeService {
     EmployeeMapper employeeMapper;
 
     /**
+     * 批量删除
+     */
+
+    public  void  deleteBatch(List<Integer> ids){
+
+        EmployeeExample employeeExample = new EmployeeExample();
+        Criteria criteria = employeeExample.createCriteria();
+        criteria.andEmpIdIn(ids);
+        employeeMapper.deleteByExample(employeeExample);
+    }
+
+    /**
      *
      * 查询所有员工
      * @return
@@ -65,4 +77,12 @@ public class EmployeeService {
 
             employeeMapper.updateByPrimaryKeySelective(employee);
         }
+
+    /**
+     *
+     * 员工删除：
+     */
+    public void  deleteEmp(Integer id){
+        employeeMapper.deleteByPrimaryKey(id);
+    }
 }
