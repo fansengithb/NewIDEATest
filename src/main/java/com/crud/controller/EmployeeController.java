@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import  com.crud.service.EmployeeService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,14 +25,68 @@ public class EmployeeController {
 
 
     /**
+     *
+     * 单个，批量二合一
+     * 批量删除： 1-2-3
+     * 单个删除 ： 1
+     * @param
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/emp/{id}",method = RequestMethod.DELETE)
+    public Msg deleteEmpById(@PathVariable("ids")String ids){
+        if (ids.contains("-")){
+            List<Integer> del_ids = new ArrayList<>();
+            String[] strings = ids.split("-");
+//            组装id的集合
+                for(String string:strings){
+                   del_ids.add( Integer.parseInt(string));
+                }
+            employeeService.deleteBatch(del_ids);
+        }else {
+            Integer id = Integer.parseInt(ids);
+            employeeService.deleteEmp(id);
+
+        }
+        return  Msg.success();
+    }
+
+
+    /**
      * 员工更新方法
+     *
+     *
+     * 如果直接发送ajax=put的请求
+     * 封装的数据
+     * Employee{empId=8, empName='null', gender='null', email='null', dId=null, department=null}
+     *
+     * 问题；请求体中有数据,但在employee中封装不上;
+     *
+     *原因:
+     *tomcat 中  1 将请求体中的数据封装为一个map
+     *           2 request.getparamter("empName") 会从map中取值
+     *           3 springMVC疯转POJO对象的时候，
+     *               会把POJO中属性的值从request.getparamter();中获取。
+     *AJAX发送PUT请求引发的血案：
+     * PUT请求,请求体中数据 requet.getParamter() 拿不到
+     * tomcat看到是PUT请求，不会封装请求体中数据为map,
+     * 只有POST请求才会封装为map
+     *
+     * 解决方法：
+     * 1 配置  HttpPutFormContentFilter
+     * 要解决发送put之类的请求，还要封装请求体中的数据
+     * 需要配置HttpPutFormContentFilter
+     * 2 作用 ：请求体中数据解析包装成一个map
+     * 3  request被重新包装，request.getparamter()被重写，就会从中取数据。
+     *
+     *
      * @param employee
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/emp/{id}",method = RequestMethod.PUT)
+    @RequestMapping(value = "/emp/{empId}",method = RequestMethod.PUT)
     public Msg saveEmp(Employee employee){
-
+        System.out.println("  修改的员工数据："+employee);
         employeeService.updateEmp(employee);
         return  Msg.success();
     }
