@@ -600,7 +600,8 @@
 
         };
 
-        //2、发送ajax请求保存更新的员工数据
+        //2、发送ajax请求保存更新的员工数据              data:$("#empAddModal form").serialize(),
+
         $.ajax({
             url:"${APP_PATH}/emp/"+$(this).attr("edit-id"),
             type:"PUT",
