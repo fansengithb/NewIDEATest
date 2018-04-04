@@ -29,7 +29,7 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(locations = { "classpath:applicationContext.xml",
-        "file:src/main/webapp/WEB-INF/dispatcherServlet-servlet.xml" })
+        "file:D:\\sun-javawork\\ssmFirst\\src\\main\\webapp\\WEB-INF\\dispatcherServlet-servlet.xml" })
 
 //        "D:\\sun-javawork\\ssmFirst\\src\\main\\webapp\\WEB-INF\\dispatcherServlet-servlet.xml" })
 //        "file:D:\\work_file\\IDEA_workspace_fan\\NewIDEATest\\src\\main\\webapp\\WEB-INF\\dispatcherServlet-servlet.xml" })

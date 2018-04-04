@@ -187,4 +187,12 @@ public class EmployeeController {
 
         return "list" ;
     }
+
+    @RequestMapping("/getTeachers")
+    public  String getTeacher(@RequestParam(value = "pn",defaultValue = "1") Integer pn){
+
+
+        return "list";
+    }
+
 }

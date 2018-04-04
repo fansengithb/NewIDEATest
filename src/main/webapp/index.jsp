@@ -344,8 +344,6 @@
 
 
 
-
-
         var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;"));
         var  lastPageLi = $("<li></li>").append($("<a></a>").append("末页").attr("href","#"));
         if(result.extend.pageInfo.hasNextPage==false){
