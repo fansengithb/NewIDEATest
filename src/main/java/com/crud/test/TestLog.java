@@ -24,6 +24,7 @@ public class TestLog {
 
         logger.error("错误信息!");
         logger.fatal("致命信息!");
+
         logger.info("wwww");
     }
 
