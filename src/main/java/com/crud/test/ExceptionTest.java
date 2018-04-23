@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class ExceptionTest {
     public static void main(String[] args) {
-        test3();
+        test1();
     }
 
     static  void test0(){
