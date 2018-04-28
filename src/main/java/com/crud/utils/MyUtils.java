@@ -190,10 +190,12 @@ public class MyUtils {
 				"梁丘","左丘","东门","西门","南宫","第五","公仪","公乘","太史","仲长","叔孙","屈突","尔朱","东乡","相里","胡母","司城","张廖","雍门",
 				"毋丘","贺兰","綦毋","屋庐","独孤","南郭","北宫","王孙"};
 
-		for (int i = 0; i < Surname.length; i++) {
-			if (Surname[i].equals("樊"))
-				System.out.println(Surname[i]+"----"+i);
-		}
+		System.out.println(Surname.length);
+
+//		for (int i = 0; i < Surname.length; i++) {
+//			if (Surname[i].equals("樊"))
+//				System.out.println(Surname[i]+"----"+i);
+//		}
 	}
 //	public static void SendSmsVerifyCode(String phone, String code)
 //			throws ClientException, com.aliyuncs.exceptions.ClientException {
