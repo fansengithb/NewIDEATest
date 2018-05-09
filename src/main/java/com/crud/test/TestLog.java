@@ -4,12 +4,22 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.PropertyConfigurator;
 
+import java.util.Date;
+
 public class TestLog {
     static org.apache.log4j.Logger  logger = org.apache.log4j.Logger.getLogger(TestLog.class);
-    public static void main(String[] args) throws  InterruptedException {
+    public static void main(String[] args) throws  Exception {
 
 
-        test2();
+        System.out.println("time:  "+new Date().getTime()+"");
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("time:  "+new Date().getTime());
+
+        //        test2();
     }
 
     static   void  test1() throws  InterruptedException{
