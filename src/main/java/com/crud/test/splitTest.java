@@ -3,7 +3,7 @@ package com.crud.test;
 public class splitTest {
     public static void main(String[] args) {
 
-        test9();
+        test5();
     }
     /**
      * 字符串  split()  测试
