@@ -17,11 +17,15 @@
     %>
     <!-- web路径：
     不以/开始的相对路径，找资源，以当前资源的路径为基准，经常容易出问题。
-    以/开始的相对路径，找资源，以服务器的路径为标准(http://localhost:3306)；需要加上项目名
+    以/开始的相对路径，找资源，以服务器的路径为标准(http://localhost:3306)；需要加上项目名F
             http://localhost:3306/crud
      -->
+
+    <%-- 引入jquery --%>
     <script type="text/javascript"
             src="${APP_PATH }/static/js/jquery-1.12.4.min.js"></script>
+
+    <%--  引入  css  和 js --%>
     <link
             href="${APP_PATH }/static/bootstrap-3.3.7-dist/css/bootstrap.min.css"
             rel="stylesheet">
